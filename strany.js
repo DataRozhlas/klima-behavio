@@ -87,8 +87,8 @@ Highcharts.chart('partaje', {
         text: 'Téma životního prostředí posílilo u voličů KDU-ČSL o 45 procent. Nejméně u vládních stran o 10-20 procent.'
     },
     credits: {
-        text : 'Zdroj: Behavio',
-        href: '',
+        text : 'Zdroj: CVVM',
+        href: 'https://cvvm.soc.cas.cz/media/com_form2content/documents/c2/a5191/f9/po200414.pdf',
         style: {
             cursor: 'arrow'
         }
