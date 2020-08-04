@@ -88,7 +88,7 @@ Highcharts.chart('partaje', {
     },
     subtitle: {
         useHTML: true,
-        text: 'V rozmezí let 2013 <span style="font-width: bold">&rarr;</span> 2020 zvedli voliči KDU-ČSL, posílilo u nich o 45 procent. U vládních stran o 10 až 20 procent'
+        text: 'V rozmezí let 2013 <span style="font-width: bold">&rarr;</span> 2020 téma zvedli voliči KDU-ČSL, posílilo u nich o 45 procent. U vládních stran o 10 až 20 procent'
     },
     credits: {
         text : 'Zdroj: CVVM',
