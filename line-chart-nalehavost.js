@@ -1,6 +1,7 @@
 Highcharts.chart("vis-line-nalehavost", {
     chart: {
       type: "area",
+      height: 450
     },
     title: {
       text: "Jak naléhavý problém podle vás představuje životní prostředí?",
@@ -17,27 +18,40 @@ Highcharts.chart("vis-line-nalehavost", {
       text: "Zdroj: CVVM",
     },
     xAxis: {
-      categories: ["2003","2004","2005","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],
+      categories: ["2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],
       labels: {
         tickmarkPlacement: 'on',
       },
+      plotBands: [
+        {
+          color: '#f9f9f9',
+          from: 2,
+          to: 4,
+          label: {
+            text: "chybí<br>data",
+            style: {
+              color: "#333",
+            },
+          },
+        },
+      ],
     },
     yAxis: {
-      title: false, // Popis osy v yAxis.labels
-      // title: {
-      //   text: "Úhrn srážek",
-      // },
-      max: 100,
-      labels: {
-        formatter: function () {
-          if (this.isLast) {
-            return this.value + " %<br>" +
-                  '<span class="axis-label-on-tick">respondentů</span>' 
-                  // + '<br>' + '<span class="light-gray-text">návěstidla</span>'
-          }
-          return this.value + " %";
-        },
+      // title: false, // Popis osy v yAxis.labels
+      title: {
+        text: "Procent respondentů",
       },
+      max: 100,
+      // labels: {
+      //   formatter: function () {
+      //     if (this.isLast) {
+      //       return this.value + " %<br>" +
+      //             '<span class="axis-label-on-tick">respondentů</span>' 
+      //             // + '<br>' + '<span class="light-gray-text">návěstidla</span>'
+      //     }
+      //     return this.value + " %";
+      //   },
+      // },
     },
     tooltip: {
       valueSuffix: " %",
@@ -61,6 +75,18 @@ Highcharts.chart("vis-line-nalehavost", {
           enabled: false,
         },
         marker: false,
+        fillColor: {
+          pattern: {
+            path: {
+                d: 'M 0 0 L 10 10 M 9 -1 L 11 1 M -1 9 L 1 11',
+                strokeWidth: 3
+            },
+            width: 10,
+            height: 10,
+            opacity: 1, 
+            color: '#00ff00'
+          },
+        },
         // marker: {
         //   symbol: 'circle',
         //   radius: 2
@@ -69,35 +95,38 @@ Highcharts.chart("vis-line-nalehavost", {
       },
     },
     series: [
-    /*   {
-        name: "neví",
-        data: [3.3, 3.4, 3, 2.4, 1.3, 2.5, 2.6, 3.3, 2.3, 3, 1.9, 2.1, 3.5, 1.5, 3, 1.3, 1.1],
-    //    color: colors['avg'],
-    //    lineWidth: 2,
-    //    dashStyle: "ShortDash",
-        zIndex: 8000,
-      },
-      {
-        name: "není to naléhavé",
-        data: [12.4, 12.8, 16.9, 12, 12.2, 17.3, 22, 27.9 ,20.7, 22.9, 22.6, 25.2, 25.5, 20.5, 17.1, 19.2, 14.7],
-     //   color: colors["2020"],
-     //   lineWidth: 3,
-        zIndex: 8000,
-        // marker: {
-        //   symbol: 'circle',
-        //   radius: 2
-        // }
-      }, */
       {
         name: "je to docela naléhavé",
-        data: [51.5, 52.8, 52.2, 43.3, 50.7, 51.5, 50.6, 46.5, 50.7, 49.1, 49.5, 46.4, 46.5, 49.5, 50.5, 45.4, 45.1],
+        data: [51.5, 52.8, 52.2, null, 43.3, 50.7, 51.5, 50.6, 46.5, 50.7, 49.1, 49.5, 46.4, 46.5, 49.5, 50.5, 45.4, 45.1], //48.1
         fillColor: colors['red-light'],
-        color: colors['red-light']
+        color: colors['red-light'],
       },
       {
         name: "je to velmi naléhavé",
-        data: [32.8, 31, 27.9, 42.3, 35.8, 28.7, 24.7, 22.3, 26.4, 24.9, 26, 26.3, 24.4, 28.5, 29.5, 34.1, 39.1],
+        data: [32.8, 31, 27.9, null, 42.3, 35.8, 28.7, 24.7, 22.3, 26.4, 24.9, 26, 26.3, 24.4, 28.5, 29.5, 34.1, 39.1], // 35.1
         fillColor: colors['red'],
+        color: colors['red']
+      },
+      {
+        name: "je to docela naléhavé",
+        data: [null, null, 52.2, 48.1, 43.3], //, 50.7, 51.5, 50.6, 46.5, 50.7, 49.1, 49.5, 46.4, 46.5, 49.5, 50.5, 45.4, 45.1],
+        fillColor: {
+          pattern: {
+            color: colors['red-light']
+          }
+        },
+        showInLegend: false,
+        color: colors['red-light'],
+      },
+      {
+        name: "je to velmi naléhavé",
+        data: [null, null, 27.9, 35.1, 42.3], //, 35.8, 28.7, 24.7, 22.3, 26.4, 24.9, 26, 26.3, 24.4, 28.5, 29.5, 34.1, 39.1],
+        fillColor: {
+          pattern: {
+            color: colors['red']
+          }
+        },
+        showInLegend: false,
         color: colors['red']
       }
     ],

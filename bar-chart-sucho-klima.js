@@ -9,7 +9,7 @@ Highcharts.chart('vis-bar-sucho-klima', {
     },
     subtitle: {
         useHTML: true,
-        text: 'Koho se už sucho dotklo, ten častěji považuje změnu klimatu za reálný problém' + '<br><span style="color: #fff">.</span>',
+        text: 'Koho se už sucho dotklo, ten častěji považuje změnu klimatu za reálný problém' // + '<br><span style="color: #fff">.</span>',
     },
     xAxis: {
         categories: ['hodně', 'trochu', 'neprojevilo se', 'nevím']

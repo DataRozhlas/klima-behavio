@@ -23,3 +23,8 @@
 .highcharts-axis-line {
   stroke-width: 0;
 }
+
+.mock-empty-line {
+  color: #fff;
+  fill: #fff;
+}

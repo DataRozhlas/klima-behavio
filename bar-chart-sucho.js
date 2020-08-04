@@ -9,7 +9,7 @@ Highcharts.chart('vis-bar-sucho', {
     },
     subtitle: {
         useHTML: true,
-        text: 'Většina lidí říká, že už sucho pocítili na vlastní kůži' + '<br><span style="color: #fff">.</span>',
+        text: 'Většina lidí říká, že už sucho pocítili na vlastní kůži' // + '<br><span style="color: #fff">.</span>',
     },
     xAxis: {
         categories: ['hodně', 'trochu', 'neprojevilo se', 'nevím']
