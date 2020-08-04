@@ -1,14 +1,14 @@
 const data = [
-    ['KDU-ČSL',31.7,68.6],
-    ['TOP 09',20.5,56.7],
+    ['KDU-ČSL',23.3,68.6],
+    ['TOP 09',24,56.7],
     ['SPD',null,46.2],
-    ['ODS',19.8,45.3], 
-    ['Piráti',27.3,45.2], // taky 2014
+    ['ODS',19.8,45.3],
+    ['Piráti',27.3,45.2],
     ['STAN',null,42.3],
-    ['ČSSD',22.6,38.6],
-    ['KSČM',20.6,38.3],
-    ['ANO',18.3,38.3] // 2014
-]
+    ['ČSSD',28.1,38.6],
+    ['KSČM',15,38.3],
+    ['ANO',18.3,38.3],
+  ]
 
 const stranyColors = {
     'ano': '#282661',
@@ -33,11 +33,14 @@ if (Highcharts.VMLRenderer) {
     Highcharts.VMLRenderer.prototype.symbols.cross = Highcharts.SVGRenderer.prototype.symbols.cross;
 }
 
-
 let i = 0
 const ser = data.reverse().map(v => {
     console.log(v)
     i += 10
+    startRok = 'rok 2013'
+    if (['ANO', 'Piráti'].includes(v[0])) {
+        startRok = 'rok 2014'
+    }
     if (v[1] === null) {
         return {
             color: stranyColors[partyNorm(v[0])],
@@ -51,14 +54,14 @@ const ser = data.reverse().map(v => {
                 }
             }]
         }
-    } 
+    }    
     return {
         color: stranyColors[partyNorm(v[0])],
         name: v[0],
         data: [{
             x: v[1],
             y: i,
-            name: 'rok 2013',
+            name: startRok,
             marker: {
                 symbol: 'circle',
             }
@@ -82,7 +85,7 @@ Highcharts.chart('partaje', {
     },
     subtitle: {
         useHTML: true,
-        text: 'lol nvim'
+        text: 'lol nvim, ANO a Piráti mají data až od roku 2014'
     },
     yAxis: {
         visible: false,
