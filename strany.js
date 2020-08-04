@@ -12,7 +12,7 @@ const data = [
 
 const stranyColors = {
     'ano': '#282661',
-    'kducsl': '#FFD444',
+    'kducsl': '#F0C432', //FFD444
     'kscm': '#8C0000',
     'ods': '#2070CA',
     'pirati': '#3A3A3A',
@@ -27,7 +27,7 @@ function partyNorm(v) {
 }
 
 Highcharts.SVGRenderer.prototype.symbols.arrow = function (x, y, w, h) {
-    return ['M', x, y, 'L', x, y + h, 'L', x + w, y + h / 2, 'z'];
+    return ['M', x, y, 'L', x + w*0.7, y + h / 2, 'L', x, y + h, 'z'];
 }
 if (Highcharts.VMLRenderer) {
     Highcharts.VMLRenderer.prototype.symbols.cross = Highcharts.SVGRenderer.prototype.symbols.cross;
@@ -50,6 +50,7 @@ const ser = data.reverse().map(v => {
                 name: 'rok 2020',
                 marker: {
                     symbol: 'square',
+                    radius: 3
                 }
             }]
         }
@@ -63,6 +64,7 @@ const ser = data.reverse().map(v => {
             name: startRok,
             marker: {
                 symbol: 'circle',
+                radius: 2.5
             }
         }, {
             x: v[2],
@@ -71,7 +73,9 @@ const ser = data.reverse().map(v => {
             marker: {
                 symbol: 'arrow',
                 lineColor: stranyColors[partyNorm(v[0])],
-                lineWidth: 2
+                lineWidth: 3, 
+                lineCap: 'round',
+                radius: 1.5 
             }
         }]
     }  
@@ -97,12 +101,46 @@ Highcharts.chart('partaje', {
         visible: false,
     },
     xAxis: {
-    	gridLineWidth: 1,
+      gridLineWidth: 1,
+      tickWidth: 0,
         min: 0,
         max: 100,
         labels: {
             format: '{value} %'
-        }  
+        },
+        plotLines: [{
+          // color: 'black',
+          dashStyle: 'dot',
+          value: 22,
+          width: 0,
+          zIndex: 10000,
+          label: {
+            text: '2010', //rok<br>
+            rotation: 0,
+            textAlign: 'center',
+            y: 15,
+            // align: 'center',
+            style: {
+              color: '#888',
+            }
+          }
+        },{
+          dashStyle: 'dot',
+          value: 68,
+          width: 0,
+          zIndex: 10000,
+          label: {
+            text: '<br>2020',
+            rotation: 0,
+            textAlign: 'center',
+            y: 15,
+            // align: 'center',
+            style: {
+              color: '#888',
+              // fontWeight: 'bold',
+            }
+          }
+        }],
     },
     legend: {
         enabled: false
@@ -116,14 +154,19 @@ Highcharts.chart('partaje', {
         line: {
             label: {
                 enabled: true,
-            }
+            }, 
+            lineWidth: 1.5, 
+            // dashStyle: 'Dash'
         },
         series: {
             dataLabels: {
               enabled: true,
+              align: 'right',
+              y: 10,
+              x: -5,
               formatter: function () {
                 if ( this.point === this.series.data[0] ) {
-                  return `<span style="font-size:0.8em; color: ${this.series.color};">${this.series.name}</span>`
+                  return `<span class="" style="font-size:0.85em; color: ${this.series.color};">${this.series.name}</span>` //font-weight: 400;
                 }
               }
             }
