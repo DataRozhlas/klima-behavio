@@ -9,7 +9,7 @@ Highcharts.chart('vis-column-2050', {
   },
   subtitle: {
       useHTML: true,
-      text: 'Muži jsou větší optimisti' + '<br><span style="color: #fff">.</span>',
+      text: 'Ženy jsou pesimističtější než muži' + '<br><span style="color: #fff">.</span>',
   },
   xAxis: {
       categories: ['Bude to lepší.', 'Stejně jako dneska.', 'Bude to obtížnější.', 'Lidský život na Zemi už nebude.']

@@ -7,7 +7,7 @@ Highcharts.chart("vis-line-nalehavost", {
       useHTML: true,
     },
     subtitle: {
-      text: "Tady přijde nějaký cool popisek?"
+      text: "Podíl lidí, kteří pokládají životní prostředí za velmi naléhavý problém, se v posledních deseti letech opět zvyšuje"
               // pridej, kdy se prekryva podnadpis s osou
               + "<span class='mock-empty-line'><br>.</span>",
       useHTML: true,
@@ -17,48 +17,25 @@ Highcharts.chart("vis-line-nalehavost", {
       text: "Zdroj: CVVM",
     },
     xAxis: {
-      categories: ['leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec'],
+      categories: ["2003","2004","2005","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"],
       labels: {
-        formatter: function () {
-          if (["červen", "červenec", "srpen"].includes(this.value)) {
-            return (
-              '<span style="font-weight: bold; color: #000">' +
-              this.value +
-              "</span>"
-            );
-          } else {
-            return this.value;
-          }
-        },
         tickmarkPlacement: 'on',
       },
-      plotBands: [
-        {
-          color: "#f2f2f2",
-          from: 4.8,
-          to: 7.2,
-          label: {
-            text: "Období s největšími<br>srážkami v roce",
-            style: {
-              color: "#444",
-            },
-          },
-        },
-      ],
     },
     yAxis: {
       title: false, // Popis osy v yAxis.labels
       // title: {
       //   text: "Úhrn srážek",
       // },
+      max: 100,
       labels: {
         formatter: function () {
           if (this.isLast) {
-            return this.value + " mm<br>" +
-                  '<span class="axis-label-on-tick">srážek</span>' 
+            return this.value + " %<br>" +
+                  '<span class="axis-label-on-tick">respondentů</span>' 
                   // + '<br>' + '<span class="light-gray-text">návěstidla</span>'
           }
-          return this.value + " mm";
+          return this.value + " %";
         },
       },
     },
@@ -92,46 +69,36 @@ Highcharts.chart("vis-line-nalehavost", {
       },
     },
     series: [
-      {
-        name: "průměr 1981-2010",
-        data: [44, 38, 48, 42, 69, 79, 88, 80, 58, 43, 49, 50],
-        color: colors['avg'],
-        lineWidth: 2,
-        dashStyle: "ShortDash",
+    /*   {
+        name: "neví",
+        data: [3.3, 3.4, 3, 2.4, 1.3, 2.5, 2.6, 3.3, 2.3, 3, 1.9, 2.1, 3.5, 1.5, 3, 1.3, 1.1],
+    //    color: colors['avg'],
+    //    lineWidth: 2,
+    //    dashStyle: "ShortDash",
         zIndex: 8000,
       },
       {
-        name: "2020",
-        data: [19, 78, 36, 18, 75, 151],
-        color: colors["2020"],
-        lineWidth: 3,
+        name: "není to naléhavé",
+        data: [12.4, 12.8, 16.9, 12, 12.2, 17.3, 22, 27.9 ,20.7, 22.9, 22.6, 25.2, 25.5, 20.5, 17.1, 19.2, 14.7],
+     //   color: colors["2020"],
+     //   lineWidth: 3,
         zIndex: 8000,
         // marker: {
         //   symbol: 'circle',
         //   radius: 2
         // }
+      }, */
+      {
+        name: "je to docela naléhavé",
+        data: [51.5, 52.8, 52.2, 43.3, 50.7, 51.5, 50.6, 46.5, 50.7, 49.1, 49.5, 46.4, 46.5, 49.5, 50.5, 45.4, 45.1],
+        fillColor: '#FAAA92',
+        color: '#FAAA92'
       },
       {
-        name: "2019",
-        data: [65, 31, 48, 25, 91, 53, 58, 77, 62, 43, 43, 38],
-        // color: colors['2019']
-      },
-      {
-        name: "2018",
-        data: [48, 14, 32, 20, 62, 76, 42, 37, 66, 35, 18, 72],
-        // color: colors['2018']
-      },
-      {
-        name: "2017",
-        data: [33, 24, 42, 77, 44, 69, 90, 68, 67, 81, 49, 38],
-      },
-      {
-        name: "2016",
-        data: [40, 62, 30, 40, 58, 82, 115, 41, 37, 65, 38, 28],
-      },
-      {
-        name: "2015",
-        data: [53, 12, 48, 30, 49, 58, 36, 67, 32, 52, 74, 20],
-      },
+        name: "je to velmi naléhavé",
+        data: [32.8, 31, 27.9, 42.3, 35.8, 28.7, 24.7, 22.3, 26.4, 24.9, 26, 26.3, 24.4, 28.5, 29.5, 34.1, 39.1],
+        fillColor: colors['2020'],
+        color: colors['2020']
+      }
     ],
   });
