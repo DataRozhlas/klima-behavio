@@ -91,14 +91,14 @@ Highcharts.chart("vis-line-nalehavost", {
       {
         name: "je to docela naléhavé",
         data: [51.5, 52.8, 52.2, 43.3, 50.7, 51.5, 50.6, 46.5, 50.7, 49.1, 49.5, 46.4, 46.5, 49.5, 50.5, 45.4, 45.1],
-        fillColor: '#FAAA92',
-        color: '#FAAA92'
+        fillColor: colors['red-light'],
+        color: colors['red-light']
       },
       {
         name: "je to velmi naléhavé",
         data: [32.8, 31, 27.9, 42.3, 35.8, 28.7, 24.7, 22.3, 26.4, 24.9, 26, 26.3, 24.4, 28.5, 29.5, 34.1, 39.1],
-        fillColor: colors['2020'],
-        color: colors['2020']
+        fillColor: colors['red'],
+        color: colors['red']
       }
     ],
   });

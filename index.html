@@ -14,8 +14,9 @@
 <link rel="stylesheet" href="./highcharts-style.css" />
 
 <!-- html -->
-<div id="vis-column-2050"></div>
+<div id="vis-bar-2050"></div>
 <div id="vis-line-nalehavost"></div>
+<div id="vis-bar-sucho"></div>
 
 
 <script>
@@ -27,9 +28,9 @@
 */
 var colors = {
   'default': '#aaa',
-  '2020': '#e63946',
-  '2018': '#009FB8',
-  '2019': '#3E80B6',
+  'red': '#e63946',
+  'blue': '#009FB8',
+  'red-light': '#3E80B6',
 }
 
 Highcharts.setOptions({
@@ -51,5 +52,6 @@ Highcharts.setOptions({
 */
 
 </script>
-<script type="text/javascript" src="./column-chart-2050.js"></script>
+<script type="text/javascript" src="./bar-chart-2050.js"></script>
 <script type="text/javascript" src="./line-chart-nalehavost.js"></script>
+<script type="text/javascript" src="./bar-chart-sucho.js"></script>

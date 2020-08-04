@@ -1,5 +1,5 @@
 
-Highcharts.chart('vis-column-2050', {
+Highcharts.chart('vis-bar-2050', {
   chart: {
       type: 'bar'
   },
@@ -68,12 +68,12 @@ Highcharts.chart('vis-column-2050', {
   {
     name: 'muži',
     data :[17,16,63,4],
-    color: colors['2019']
+    color: colors['blue']
   },
   {
     name: 'ženy',
     data: [8,14,75,3],
-    color: colors['2020']
+    color: colors['red']
     // color: colors[function() { console.log(this); return '2020' }()]
   },
 ]
