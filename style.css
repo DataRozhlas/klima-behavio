@@ -20,8 +20,6 @@
   font-weight: bold;
 }
 
-#vis-stacked-bar-codelate {
-  height: 50%;
-  width: 100%;
-  position: absolute;
+.highcharts-axis-line {
+  stroke-width: 0;
 }

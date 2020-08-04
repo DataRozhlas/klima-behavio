@@ -1,7 +1,8 @@
 
 Highcharts.chart('vis-stacked-bar-codelate', {
     chart: {
-        type: 'bar'
+        type: 'bar',
+        height: 500
     },
     title: {
         text: 'Co vy osobně děláte pro ochranu životního prostředí?', 
