@@ -12,23 +12,22 @@ Highcharts.chart('vis-bar-2050', {
       text: 'Ženy jsou pesimističtější než muži' + '<br><span style="color: #fff">.</span>',
   },
   xAxis: {
-      categories: ['Bude to lepší.', 'Stejně jako dneska.', 'Bude to obtížnější.', 'Lidský život na Zemi už nebude.']
+      categories: ['Bude to lepší.', 'Stejně jako dneska.', 'Bude to obtížnější.', 'Lidský život na Zemi<br>už nebude.']
   },
   yAxis: {
-      title: {
-          text: 'procento odpovědí'
-      },
+      title: false,
+      max: 100,
       // showFirstLabel: false,
-      // labels: {
-        // formatter: function() {
+      labels: {
+       formatter: function() {
         //   if (this.isLast) {
         //     return this.value + '<br>' +
         //                 '<span class="light-gray-text">jízd za</span>' + '<br>' +
         //                 '<span class="light-gray-text">návěstidla</span>'
         //   } else {
-        //     return this.value
-        //   }
-        // } 
+           return this.value + ' %'
+         }
+       } 
       // }
   }, 
     tooltip: {
