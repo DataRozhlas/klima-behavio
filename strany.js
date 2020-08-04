@@ -115,7 +115,7 @@ Highcharts.chart('partaje', {
           width: 0,
           zIndex: 10000,
           label: {
-            text: '2010', //rok<br>
+            text: '2013', //rok<br>
             rotation: 0,
             textAlign: 'center',
             y: 15,

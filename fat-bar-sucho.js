@@ -54,7 +54,7 @@ Highcharts.chart('vis-fat-bar-sucho', {
     series: {
       stacking: 'normal',
       pointWidth: 400,
-      borderRadius: 8,
+      borderRadius: 2,
       borderWidth: 2, 
       borderColor: '#fff'
 
