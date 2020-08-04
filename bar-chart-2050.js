@@ -38,7 +38,11 @@ Highcharts.chart('vis-bar-2050', {
       enabled: false
   },
   credits: {
-    text : 'Zdroj: Behavio'
+    text : 'Zdroj: Behavio',
+    href: '',
+    style: {
+        cursor: 'arrow'
+    }
   },
   plotOptions: {
       bar: {

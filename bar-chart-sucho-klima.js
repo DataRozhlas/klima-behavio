@@ -37,7 +37,11 @@ Highcharts.chart('vis-bar-sucho-klima', {
         enabled: false
     },
     credits: {
-      text : 'Zdroj: Behavio'
+      text : 'Zdroj: Behavio',
+      href: '',
+      style: {
+          cursor: 'arrow'
+      }
     },
     plotOptions: {
         bar: {

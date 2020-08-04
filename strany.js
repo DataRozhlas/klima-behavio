@@ -81,11 +81,18 @@ const ser = data.reverse().map(v => {
 Highcharts.chart('partaje', {
     title: {
         useHTML: true,
-        text: 'Jak to vidí strany'
+        text: 'Podíl voličů, kteří považují životní prostředí za naléhavý problém'
     },
     subtitle: {
         useHTML: true,
-        text: 'lol nvim, ANO a Piráti mají data až od roku 2014'
+        text: 'Téma životního prostředí posílilo u voličů KDU-ČSL o 45 procent. Nejméně u vládních stran o 10-20 procent.'
+    },
+    credits: {
+        text : 'Zdroj: Behavio',
+        href: '',
+        style: {
+            cursor: 'arrow'
+        }
     },
     yAxis: {
         visible: false,

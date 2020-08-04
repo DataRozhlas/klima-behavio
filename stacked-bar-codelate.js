@@ -39,7 +39,11 @@ Highcharts.chart('vis-stacked-bar-codelate', {
         enabled: false
     },
     credits: {
-      text : 'Zdroj: Behavio'
+      text : 'Zdroj: Behavio',
+      href: '',
+      style: {
+          cursor: 'arrow'
+      }
     },
     legend: {
       reversed: true  

@@ -37,7 +37,11 @@ Highcharts.chart('vis-bar-sucho', {
         enabled: false
     },
     credits: {
-      text : 'Zdroj: Behavio'
+      text : 'Zdroj: Behavio',
+      href: '',
+      style: {
+          cursor: 'arrow'
+      }
     },
     plotOptions: {
         bar: {
