@@ -35,7 +35,6 @@ if (Highcharts.VMLRenderer) {
 
 let i = 0
 const ser = data.reverse().map(v => {
-    console.log(v)
     i += 10
     startRok = 'rok 2013'
     if (['ANO', 'Piráti'].includes(v[0])) {
@@ -110,7 +109,6 @@ Highcharts.chart('partaje', {
     },
     tooltip: {
         formatter: function() {
-            console.log(this)
             return `<span style="color: ${this.series.color};">${this.series.name}</span><br>${this.key}: ${this.x} %`
         }
     },
